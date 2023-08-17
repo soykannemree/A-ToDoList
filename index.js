@@ -3,22 +3,26 @@ import bodyParser from "body-parser";
 
 const app = express();
 const port = 3000;
-var newItemlist=[];
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended : true}));
 
-
+let newItems=[];
 
 app.get("/", (req, res) => {
-    res.render("index.ejs");
+    res.render("index.ejs",{
+        newListItems: newItems,
+    });
 });
 
 
-app.post("/", (req, res) => {
-    const newItem = req.body.newItem;
-    newItemlist.push(newItem);
-    res.render("/");
+app.post("/submit", (req, res) => {
+    let newItem = req.body["newItem"];
+    newItems.push(newItem);
+    console.log(newItems);
+    res.render("index.ejs",{
+        newListItems: newItems,
+    });
 });
 
   
