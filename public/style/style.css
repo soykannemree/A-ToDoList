@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+main{
+    background: #900C3A;
+    color: #272121;
+    height: 100vh;
+    width: 100vw;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+    background: #272121;
+    height: 10%;
+    width: 100%;
+    box-shadow: 2px 4px 1rem 2px#00000073;
+}
+.h4{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    text-shadow:
+    0 0 1px #fdffd1,
+    0 0 2px #ffeea1,
+    0 0 4px #fff9b7,
+    0 0 8px #e65f83,
+    0 0 16px #ff91ae,
+    0 0 32px #bc4c6a,
+    0 0 64px #ff91ae,
+    0 0 120px #c8617c;
+}
+.h1{
+    display: flex;
+    align-items: center;
+    width: 70%;
+    animation: flicker 1.5s infinite alternate;     
+    text-shadow:
+    0 0 1px #fff,
+    0 0 2px #fff,
+    0 0 4px #ffcece,
+    0 0 8px #C70036,
+    0 0 16px #C70036,
+    0 0 32px #C70036,
+    0 0 64px #C70036,
+    0 0 120px #c11241;
+}
+
+@keyframes flicker {
+    
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+
+      text-shadow:
+      0 0 1px #fdffd1,
+      0 0 2px #ffeea1,
+      0 0 4px #fff9b7,
+      0 0 8px #e65f83,
+      0 0 16px #ff91ae,
+      0 0 32px #bc4c6a,
+      0 0 64px #ff91ae,
+      0 0 120px #c8617c;
+  
+  }
+  
+  20%, 24%, 55% {        
+      text-shadow: none;
+  }    
+}
+
+
+.main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    width: 100%;
+}
+.list{
+    display: flex;
+    background: #C70036;
+    min-height: 80px;
+    width: 40%;
+    box-shadow: 2px 4px 1rem 2px#00000073;
+}
+input{
+    width: 80%;
+    
+    border-color: #ff5f8a;
+}
+.button{
+    display: flex;
+    height: 100%;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+button{
+    background: #C70036;
+    color: white;
+    font-size: 1.5rem;
+    border-color: #ff5f8a;
+    height: 100%;
+    width: 100%;
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: #272121;
+    height: 10%;
+    width: 100%;
+    box-shadow: 2px 4px 1rem 2px#00000073;
+    
+    text-shadow:
+    0 0 1px #fdffd1,
+    0 0 8px #e65f83,
+    0 0 16px #ff91ae;
+}
