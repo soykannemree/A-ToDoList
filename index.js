@@ -1,33 +1,44 @@
-import express from "express";
-import bodyParser from "body-parser";
+const express = require("express");
+const bodyParser = require("body-parser");
 
 const app = express();
-const port = 3000;
+
+app.set('view engine', 'ejs');
+
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static("public"));
-app.use(bodyParser.urlencoded({extended : true}));
 
-let newItems=[];
 
-app.get("/", (req, res) => {
-    res.render("index.ejs",{
-        newListItems: newItems,
-    });
+
+const items = [];
+
+
+
+app.get("/", function(req, res) {
+    
+    res.render("index", {
+
+       newListItems: items
+      
+      });
+    
 });
 
 
-app.post("/submit", (req, res) => {
-    let newItem = req.body["newItem"];
-    newItems.push(newItem);
-    console.log(newItems);
-    res.render("index.ejs",{
-        newListItems: newItems,
-    });
-});
+app.post("/", function(req, res){
 
-  
-  
-app.listen(port, () => {
-    console.log(`Listening on port ${port}`);
+    const item = req.body.newItem;
+    
+    items.push(item);
+    
+    res.redirect("/");
+    
 });
   
+
+app.listen(3000, function() {
+    
+    console.log("Server started on port 3000");
+    
+});
