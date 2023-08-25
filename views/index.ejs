@@ -1,15 +1,33 @@
+<%- include("partials/header.ejs") -%>
 
 
-            <%-include("partials/header.ejs")%>
+  <div class="list header" id="header">
+    <h2>Welcome to your</h2>
+    <h1>toDoList</h1>
+  </div>
 
-            <div class="main">
 
-                <form class="list" action="/" method="post">
-                    <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
-                    <div class="button">
-                        <button type="submit" name="list">+</button>
-                        <button type="read" name="list">Ok</button>
-                    </div>
-                </form>
+  <div class="list">
 
-            <%-include("partials/footer.ejs")%>
+    <% for (let i=0; i<newListItems.length; i++) { %>
+
+      <div class="item">
+
+        <input type="checkbox">
+        <p><%=  newListItems[i]  %></p>
+
+      </div>
+
+    <% } %>
+
+      <form class="item" action="/" method="post">
+
+        <input type="text" name="newItem" placeholder="What are you going to do?" autocomplete="off">
+        <button type="submit" name="list">+</button>
+
+      </form>
+
+  </div>
+
+
+<%- include("partials/footer.ejs") -%>
